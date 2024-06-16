@@ -12,7 +12,7 @@ namespace Zune.Net.Helpers
 {
     public static partial class LastFM
     {
-        public static readonly LastfmClient _client = new(Constants.FM_API_KEY, Constants.FM_API_SECRET);
+        public static readonly LastfmClient _client = new(Environment.GetEnvironmentVariable("FM_API_KEY"), Environment.GetEnvironmentVariable("FM_API_SECRET"));
 
         public static readonly Author FM_AUTHOR = new()
         {

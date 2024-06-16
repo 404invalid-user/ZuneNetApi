@@ -11,7 +11,7 @@ namespace Zune.Net.Helpers
 {
     public static partial class Listen
     {
-        public static readonly Client _client = new(Constants.LN_API_KEY);
+        public static readonly Client _client = new(Environment.GetEnvironmentVariable("LN_API_KEY"));
 
         public static readonly Author LN_AUTHOR = new()
         {

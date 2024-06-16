@@ -19,8 +19,8 @@ namespace Zune.Net.Helpers
         {
             return API_BASE
                 .WithHeader("Content-Type", "application/json")
-                .WithHeader("X-USER-ID", Constants.TD_USER_ID)
-                .WithHeader("X-API-KEY", Constants.TD_API_KEY);
+                .WithHeader("X-USER-ID", Environment.GetEnvironmentVariable("TD_USER_ID"))
+                .WithHeader("X-API-KEY", Environment.GetEnvironmentVariable("TD_API_KEY"));
         }
 
         public static async Task<Feed<PodcastSeries>> SearchPodcasts(string query, params string[] props)
